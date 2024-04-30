@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=3 uid="uid://2wn7gs4upae"]
+
+[ext_resource type="Script" path="res://scenes/slime.gd" id="1_ev3dk"]
+[ext_resource type="Texture2D" uid="uid://dyrykgeer850c" path="res://assets/sprites/slime_purple.png" id="1_klpgu"]
+[ext_resource type="PackedScene" uid="uid://1bkmmyi5nhn3" path="res://scenes/killzone.tscn" id="2_n1e30"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uayk"]
+atlas = ExtResource("1_klpgu")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kw70"]
+atlas = ExtResource("1_klpgu")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0lw3"]
+atlas = ExtResource("1_klpgu")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kl3gw"]
+atlas = ExtResource("1_klpgu")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y72d2"]
+atlas = ExtResource("1_klpgu")
+region = Rect2(0, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyoy1"]
+atlas = ExtResource("1_klpgu")
+region = Rect2(24, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mduoa"]
+atlas = ExtResource("1_klpgu")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7kvv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uayk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kw70")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0lw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kl3gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y72d2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyoy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mduoa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcgxt"]
+size = Vector2(10, 13)
+
+[node name="Slime" type="Node2D"]
+script = ExtResource("1_ev3dk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c7kvv")
+autoplay = "default"
+frame_progress = 0.107964
+
+[node name="Killzone" parent="." instance=ExtResource("2_n1e30")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_bcgxt")
