@@ -62,7 +62,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcgxt"]
-size = Vector2(10, 13)
+size = Vector2(10, 12)
 
 [node name="Slime" type="Node2D"]
 script = ExtResource("1_ee6kv")
@@ -76,7 +76,7 @@ frame_progress = 0.244555
 [node name="Killzone" parent="." instance=ExtResource("2_n1e30")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
-position = Vector2(0, 5.5)
+position = Vector2(0, 5)
 shape = SubResource("RectangleShape2D_bcgxt")
 
 [node name="RaycastRight" type="RayCast2D" parent="."]

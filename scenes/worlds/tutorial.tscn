@@ -523,7 +523,7 @@ layer_1/tile_data = PackedInt32Array(-131077, 0, 11, -65541, 0, 11, -5, 0, 11, 6
 
 [node name="Player" parent="." instance=ExtResource("2_5mkgc")]
 z_index = 2
-position = Vector2(1586, 238)
+position = Vector2(229, 28)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(2, -1)
@@ -583,3 +583,6 @@ position = Vector2(298, 40)
 
 [node name="Slime" parent="." instance=ExtResource("7_nk3bs")]
 position = Vector2(1800, 292)
+
+[connection signal="speed_potion_collected" from="Speed_Potion" to="Player" method="_on_speed_potion_speed_potion_collected"]
+[connection signal="speed_potion_ended" from="Speed_Potion" to="Player" method="_on_speed_potion_speed_potion_ended"]

@@ -19,4 +19,8 @@ region_rect = Rect2(20, 130, 8, 14)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_03omo")
 
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="speed_potion_ended" from="." to="." method="_on_speed_potion_ended"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

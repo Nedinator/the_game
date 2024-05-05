@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 150
+var SPEED_MODIFIER = 1
 const JUMP_VELOCITY = -250.0
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -22,7 +23,7 @@ func _physics_process(delta):
 	# Handle movement
 	var direction = Input.get_axis("left", "right")
 	if direction:
-		velocity.x = direction * SPEED
+		velocity.x = direction * SPEED * SPEED_MODIFIER
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
@@ -37,3 +38,10 @@ func _physics_process(delta):
 		animated_sprite.flip_h = false
 	else:
 		animated_sprite.play("idle")
+
+func _on_speed_potion_speed_potion_collected():
+	SPEED_MODIFIER = 1.5
+
+
+func _on_speed_potion_speed_potion_ended():
+	SPEED_MODIFIER = 1
