@@ -183,5 +183,4 @@ shape = SubResource("RectangleShape2D_774y2")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_qxc7r")
-animation = &"run"
-frame_progress = 0.265133
+animation = &"death"
