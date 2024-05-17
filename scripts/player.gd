@@ -39,9 +39,11 @@ func _physics_process(delta):
 
 func _on_speed_potion_speed_potion_collected():
 	SPEED_MODIFIER = 1.5
+	animated_sprite.speed_scale = 1.5
 
 func _on_speed_potion_speed_potion_ended():
 	SPEED_MODIFIER = 1
+	animated_sprite.speed_scale = 1
 
 func _on_slime_dead():
 	alive = false
